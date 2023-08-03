@@ -1,0 +1,42 @@
+.btn-tree {
+    border: 2px solid #e3eaef;
+    padding: 5px 10px;
+    font-size: 14px;
+    font-weight: 600;
+    width: 170px;
+    color: #444;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0px 20px 20px -5px;
+    background: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+    z-index: 9;
+    span {
+      background-color: #54a6d9;
+      width: 35px;
+      height: 35px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 24px;
+      font-weight: 500;
+      border-radius: 50%;
+      outline: 5px solid #c0e7ff;
+      margin-left: -20px;
+      transform: scale(1.2);
+    }
+    img {
+      border: 2px solid #e3eaef;
+      padding: 6px;
+      width: 12px;
+      border-radius: 4px;
+    }
+  }
+  
+  
+
+  

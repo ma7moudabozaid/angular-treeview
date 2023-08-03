@@ -1,0 +1,16 @@
+
+  
+  .text-input {
+    height: 40px;
+    display: flex;
+    padding: 8px;
+    gap: 10px;
+    .control {
+      border: 1px solid #ddd;
+      height: 40px;
+      width: 190px;
+      border-radius: 6px;
+      padding: 0px 10px;
+    }
+  }
+  

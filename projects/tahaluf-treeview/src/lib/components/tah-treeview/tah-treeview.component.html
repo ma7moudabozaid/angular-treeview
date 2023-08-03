@@ -1,0 +1,23 @@
+<div class="tree" *ngIf="items">
+
+    <ng-template #template let-item="item" let-expand="expand" let-ind="ind" let-last="last">
+        <div class="card-content" (click)="expand(item)">
+            <!-- default template -->
+            <button class="btn btn-tree" *ngIf="!parentTemplate">
+                <span> A </span>
+                {{item.name}} - {{ind}}
+                <img [src]="item.isExpand ? 'assets/img/minus.png' : 'assets/img/plus.png'" [hidden]="!item.children"
+                    alt="">
+            </button>
+            <!-- custom template -->
+            <ng-container *ngIf="parentTemplate">
+                <ng-template [ngTemplateOutlet]="parentTemplate"
+                    [ngTemplateOutletContext]="{item:item,expand:expand}"></ng-template>
+            </ng-container>
+        </div>
+    </ng-template>
+
+    <lib-tah-treeitem *ngFor="let item of items; let ind = index; let last = last" [item]="item" [ind]="ind"
+        [last]="last" [itemTemplate]="template ">
+    </lib-tah-treeitem>
+</div>

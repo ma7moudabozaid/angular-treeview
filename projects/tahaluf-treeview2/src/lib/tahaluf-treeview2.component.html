@@ -1,0 +1,32 @@
+<div class="tree" *ngIf="items">
+
+    <ng-template #template let-item="item" let-expand="expand" let-ind="ind" let-first="first" let-last="last">
+        <div class="card-content" (click)="expand(item)" [class.d-none]="item.type == 'group'">
+            <!-- default template -->
+            <button class="btn btn-tree" *ngIf="!parentTemplate" [class.d-none]="item.type == 'group'">
+                {{item.key}}
+            </button>
+            <!-- <div class="text-input">
+                <div>
+                    <select class="control">
+                        <option>one</option>
+                        <option>two</option>
+                        <option>three</option>
+                    </select>
+                </div>
+                <div>
+                    <input type="text" class="control" placeholder="name">
+                </div>
+            </div> -->
+            <!-- custom template -->
+            <ng-container *ngIf="parentTemplate">
+                <ng-template [ngTemplateOutlet]="parentTemplate"
+                    [ngTemplateOutletContext]="{item:item,expand:expand}"></ng-template>
+            </ng-container>
+        </div>
+    </ng-template>
+
+    <lib-tah-treeitem *ngFor="let item of items; let ind = index; let first = first; let last = last" [item]="item"
+        [ind]="ind" [first]="first" [last]="last" [itemTemplate]="template ">
+    </lib-tah-treeitem>
+</div>

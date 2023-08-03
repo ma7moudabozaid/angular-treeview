@@ -1,0 +1,13 @@
+<div class="card-tree">
+    <div class="tree-child" *ngIf="item" [ngClass]="{'last-child': last}">
+        <ng-template [ngTemplateOutlet]="itemTemplate"
+            [ngTemplateOutletContext]="{item:item,ind:ind,last:last,expand:expand}"></ng-template>
+
+        <ng-container *ngIf="item.isExpand">
+            <lib-tah-treeitem *ngFor="let child of item.children; let ind = index; let last = last" [item]="child"
+                [ind]="ind" [last]="last" [itemTemplate]="itemTemplate"></lib-tah-treeitem>
+        </ng-container>
+    </div>
+</div>
+
+<!-- [class.last-child]="item.children?.length - 1 == ind || item.children?.length - 1 == 0 || item.children?.length - 1 == -1" -->
