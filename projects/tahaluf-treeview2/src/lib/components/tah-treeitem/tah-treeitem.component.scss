@@ -6,11 +6,10 @@
   position: relative;
   // padding: 0 0;
   padding: 60px 0;
-  
 }
 .item-child {
   // margin-left: 60px;
-  border-right: 3px solid #d1d2dd;
+  border-inline-end: 3px solid #d1d2dd;
   // border: 2px solid #d1d2dd;
   position: relative;
   margin: 0px 0px;
@@ -102,7 +101,7 @@
   }
 }
 .item-child.no-child {
-  border-right: 0px solid #d1d2dd;
+  border-inline-end: 0px solid #d1d2dd;
   &:after {
     width: 80%;
   }
@@ -133,5 +132,15 @@
   // }
 }
 .card-tree.first-child.with-child {
-  translate: 0px -50% 0px
+  translate: 0px -50% 0px;
+}
+::ng-deep html[dir="rtl"] {
+  .item-child::before {
+    left: initial;
+    right: -5px;
+  }
+  .item-child::after {
+    left: initial;
+    right: 0;
+  }
 }
